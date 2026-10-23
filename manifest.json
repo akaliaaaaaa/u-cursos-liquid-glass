@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "U-Cursos Liquid Glass",
+  "version": "1.0",
+  "description": "Aplica texturas de liquid glass y colores personalizados al horario de U-Cursos.",
+  "content_scripts": [
+    {
+      "matches": ["*://*.u-cursos.cl/*", "*://*.ucampus.uchile.cl/*"],
+      "css": ["styles.css"],
+      "js": ["content.js"]
+    }
+  ]
+}

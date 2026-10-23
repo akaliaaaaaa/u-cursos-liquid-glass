@@ -1,0 +1,279 @@
+/* =========================================
+   1. VARIABLES GLOBALES
+   ========================================= */
+:root {
+    --bg-ultra-dark: #111115;
+    --bg-gradient-dark: linear-gradient(135deg, #111115, #111115, #111115);
+    --glass-bg: rgba(20, 22, 25, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.06);
+    --glass-highlight: rgba(255, 255, 255, 0.12);
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --accent-neon: #396fad;
+    --accent-hover: #5cb3fe;
+}
+
+/* =========================================
+   2. ESTILOS GLOBALES Y TIPOGRAFÍA BASE
+   ========================================= */
+body.logeado, 
+#body.ucursos.horario {
+    background: var(--bg-gradient-dark) !important;
+    background-attachment: fixed !important;
+    color: var(--text-primary) !important;
+}
+
+table h1,
+ul.modulo li a {
+    color: var(--text-secondary);
+}
+
+/* =========================================
+   3. BOTONES, FORMULARIOS Y PAGINACIÓN
+   ========================================= */
+ul.paginas li a, 
+ul.paginas li span, 
+.boton, 
+.button, 
+a.boton, 
+a.boton:not([ref]), 
+a.buscar, 
+a.button, 
+a.button:not([ref]), 
+button, 
+form input[type=submit], 
+input.buscar {
+    background-color: #1c1c23 !important;
+    border: solid #2e2e3d !important;
+}
+
+/* =========================================
+   4. ESTRUCTURA DE LA INTERFAZ Y MÓDULOS
+   ========================================= */
+#header {
+    background-color: #111115 !important;
+}
+
+/* Fondos principales de contenedores */
+.filtros,
+#modulos, 
+div.curso, 
+ul.modulos, 
+#body div.activo .sticky, 
+#body .post .sticky {
+    background-color: #111115 !important;
+}
+
+/* Elementos secundarios, barras laterales y tarjetas */
+#body .sidebar, 
+div.buscar, 
+form.buscar, 
+input, 
+select, 
+textarea, 
+table.detalle, 
+table thead tr th, 
+.gris, 
+ul.modulo li, 
+ul.submodulo li, 
+table td.search, 
+table tr.search,
+#body .afiche-item,
+#body .afiche-sizer,
+ul.modulos li.sel,
+#body div.msg .new_texto, 
+#body div.msg .texto {
+    background-color: #1c1c23 !important;
+}
+
+#body div.msg .new_texto, 
+#body div.msg .texto {
+    border: 0px !important;
+}
+
+/* Notificaciones o elementos nuevos */
+#body div.new {
+    background-color: #3f311c !important;
+}
+
+/* =========================================
+   5. CUADRÍCULA DEL HORARIO Y RELOJ
+   ========================================= */
+table.dhorario {
+    background: transparent !important;
+}
+
+.dhorario tbody td, 
+.dhorario thead th,
+.dhorario tbody tr {
+    border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.dhorario thead th {
+    background: #1c1c23 !important;
+    color: var(--text-secondary) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* Líneas divisorias de horas */
+.hora, 
+.celda-hora {
+    border-top: 1px solid #323131;
+}
+
+/* Indicador de la hora actual (Reloj) */
+body .reloj {
+    border-top: 1px solid var(--accent-neon) !important;
+    margin-top: 432px; /* hotfix */
+}
+
+#line span {
+    background: var(--accent-neon) !important;
+    backdrop-filter: blur(16px) saturate(120%) !important;
+    color: #000 !important;
+    font-weight: bold !important;
+}
+
+#circle {
+    background: var(--accent-neon) !important;
+    box-shadow: 0 0 10px var(--accent-neon) !important;
+}
+
+/* =========================================
+   6. BLOQUES DE CURSOS (LIQUID GLASS EFFECT)
+   ========================================= */
+.dhorario .bloque.tinted-dark-glass {
+    background: rgba(var(--r), var(--g), var(--b), 0.5) !important;
+    backdrop-filter: blur(16px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
+    border: 1px solid rgba(var(--r), var(--g), var(--b), 0.2) !important;
+    border-top: 1px solid rgba(var(--r), var(--g), var(--b), 0.4) !important;
+    border-left: 1px solid rgba(var(--r), var(--g), var(--b), 0.4) !important;
+    border-radius: 6px !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.dhorario .bloque.tinted-dark-glass:hover {
+    background: rgba(var(--r), var(--g), var(--b), 0.7) !important;
+    transform: translateY(-3px);
+    border-color: rgba(var(--r), var(--g), var(--b), 0.8) !important;
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.9), 
+                0 0 15px rgba(var(--r), var(--g), var(--b), 0.2) !important;
+}
+
+/* Tipografía interna de los bloques */
+.dhorario .bloque.tinted-dark-glass h1 a {
+    color: rgb(var(--r), var(--g), var(--b)) !important;
+    filter: brightness(2) saturate(1.2);
+    font-weight: 400 !important;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8) !important;
+    transition: filter 0.2s ease !important;
+}
+
+.dhorario .bloque.tinted-dark-glass:hover h1 a {
+    filter: brightness(2) saturate(1.5);
+}   
+
+.dhorario .bloque h2, 
+.dhorario .bloque h2.detalle {
+    color: var(--text-secondary) !important;
+    font-weight: 400 !important;
+}
+
+/* Etiquetas interiores (Cátedra, Auxiliar, Laboratorio) */
+.dhorario .bloque .pill {
+    background: #1c1c23 !important;
+    border: 0px solid var(--glass-border) !important;
+    color: var(--text-secondary) !important;
+    border-radius: 1px !important;
+    text-shadow: none !important;
+}
+
+/* =========================================
+   7. CALENDARIO GITHUB (MAPA DE CALOR)
+   ========================================= */
+   
+/* Días sin eventos (data-n vacío) */
+.github table tr td .n[class="n "][data-n=""]{
+    background-color: #1c1c23 !important;
+    border-radius: 2px !important; /* Suaviza ligeramente los bordes si lo deseas */
+}
+
+/* Opcional: Oscurecer el borde de las celdas del calendario para que se fusionen con el fondo oscuro */
+.github table {
+    border-color: transparent !important;
+}
+
+.github table tr td {
+    border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* =========================================
+   8. SIDEBAR Y MÓDULOS (LIQUID GLASS EFFECT)
+   ========================================= */
+
+/* Hacer transparentes los contenedores li para que no bloqueen el efecto */
+#modulos ul li {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin-bottom: 8px !important;
+}
+
+/* Base general para textos e íconos en el sidebar */
+#modulos ul li a h1, 
+#modulos ul li a h2, 
+#modulos ul li a span {
+    color: var(--text-primary) !important;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.5) !important;
+}
+
+/* ---- A. CURSOS CON COLOR EXTRAÍDO DEL HORARIO ---- */
+#modulos ul li a.tinted-sidebar-glass {
+    background: rgba(var(--r), var(--g), var(--b), 0.4) !important;
+    backdrop-filter: blur(16px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
+    border: 1px solid rgba(var(--r), var(--g), var(--b), 0.25) !important;
+    border-top: 1px solid rgba(var(--r), var(--g), var(--b), 0.5) !important;
+    border-left: 1px solid rgba(var(--r), var(--g), var(--b), 0.5) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    display: block !important;
+}
+
+#modulos ul li a.tinted-sidebar-glass:hover {
+    background: rgba(var(--r), var(--g), var(--b), 0.25) !important;
+    transform: translateX(4px);
+    border-color: rgba(var(--r), var(--g), var(--b), 0.8) !important;
+    box-shadow: -4px 8px 20px 0 rgba(0, 0, 0, 0.6), 
+                0 0 12px rgba(var(--r), var(--g), var(--b), 0.3) !important;
+}
+
+/* ---- B. ELEMENTOS GENÉRICOS (COMUNIDADES, FAVORITOS) ---- */
+#modulos ul li a.default-sidebar-glass {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(16px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-top: 1px solid var(--glass-highlight) !important;
+    border-left: 1px solid var(--glass-highlight) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    display: block !important;
+}
+
+#modulos ul li a.default-sidebar-glass:hover {
+    background: rgba(30, 35, 45, 0.1) !important;
+    transform: translateX(4px);
+    border-color: var(--accent-neon) !important;
+    box-shadow: -4px 8px 20px 0 rgba(0, 0, 0, 0.6), 
+                0 0 12px rgba(57, 111, 173, 0.15) !important;
+}
+
+/* Eliminar la clase .sel gris original */
+#modulos ul li.sel a {
+    background: inherit;
+}
