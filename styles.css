@@ -44,7 +44,7 @@ button,
 form input[type=submit], 
 input.buscar {
     background-color: #1c1c23 !important;
-    border: solid #2e2e3d !important;
+    border: 0px solid #2e2e3d !important;
 }
 
 /* =========================================
