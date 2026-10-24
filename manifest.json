@@ -5,7 +5,7 @@
   "description": "Aplica texturas de liquid glass y colores personalizados al horario de U-Cursos.",
   "content_scripts": [
     {
-      "matches": ["*://*.u-cursos.cl/*", "*://*.ucampus.uchile.cl/*"],
+      "matches": ["*://*.u-cursos.cl/*"],
       "css": ["styles.css"],
       "js": ["content.js"]
     }
